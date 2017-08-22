@@ -32,3 +32,23 @@ videoSearch(term){
 		});
 	});
 }
+
+
+	render(){
+		const videoSearch= _.debounce((term) => {this.videoSearch(term)}, 300);
+
+		return ( 
+			<div>
+				<SearchBar onSearchTermChange={videoSearch} />
+				<VideoDetail video={this.state.selectedVideo} />
+				<VideoList
+				onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+				 videos={this.state.videos} />
+			</div>
+		);
+	}
+
+}
+
+// take this component html and put it on the page (in the DOM)
+ReactDOM.render(<App/>, document.querySelector('.container')); 
