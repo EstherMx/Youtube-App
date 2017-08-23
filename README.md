@@ -1,1 +1,1 @@
-# Youtube-App
+An entertainment platform that allows users to search and watch YouTube videos.
